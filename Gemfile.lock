@@ -1,0 +1,18 @@
+PATH
+  remote: .
+  specs:
+    tm2sublime_snippets (0.0.1)
+      plist (> 0)
+      thor (> 0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    plist (3.1.0)
+    thor (0.15.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  tm2sublime_snippets!
