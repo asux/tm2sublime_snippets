@@ -1,10 +1,10 @@
-require "tm2sublime_snippets/version"
+require 'tm2sublime_snippets/version'
 require 'thor'
 require 'thor/actions'
 require 'plist'
 
 module Tm2sublimeSnippets
-  class ConvertCommand < Thor
+  class Command < Thor
     include Thor::Actions
 
     def self.source_root
@@ -19,12 +19,12 @@ module Tm2sublimeSnippets
       Dir.glob(File.join(source, "*.plist")).each do |file_name|
         plist = Plist.parse_xml(file_name)
         @content = plist['content']
-        @name = plist['name']
+        @description = plist['name']
         @scope = plist['scope']
         @tab_trigger = plist['tabTrigger']
         template "templates/template.sublime-snippet", "#{@tab_trigger}.sublime-snippet"
       end
     end
 
-  end # class ConvertCommand
+  end # class Command
 end # module Tm2sublimeSnippets
